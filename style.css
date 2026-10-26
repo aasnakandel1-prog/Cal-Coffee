@@ -13,6 +13,19 @@ header.bg-light {
 
 }
 
+header nav {
+  max-width: 100%;
+    width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+header nav > div {
+    margin-left: auto;
+}
 .navbar-brand {
     color:#eb8d0a;
     font-size: 26px;
@@ -27,15 +40,40 @@ nav .btn {
     font-size: 20px;
 }
 
-h1,h2{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-}
-
 h1 {
+    font-family:Cambria, Cochin, Georgia, serif;
     color: #70452f
 }
 
+#about {
+    background-color: #eb8d0a;
+    padding: 90px 24px;
+    text-align: center;
+}
+
+.about-label {
+    color:#974343;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#about h2{
+    font-family:Georgia, serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    color: #513526;
+    margin: 24px 0;
+
+}
+
+#about p {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    line-height: 1.1;
+    max-width: 500px; 
+    margin: 20px 0;
+}
 .btn-dark {
     background-color: #94431d;
     border-color: #ee5007;
