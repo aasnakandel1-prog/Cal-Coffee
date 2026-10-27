@@ -52,10 +52,10 @@ h1 {
 }
 
 .about-label {
-    color:#974343;
-    font-size: 12px;
+    color:#d8cccc;
+    font-size: 18px;
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 }
 
 #about h2{
@@ -72,7 +72,7 @@ h1 {
     font-size: 24px;
     line-height: 1.1;
     max-width: 500px; 
-    margin: 20px 0;
+    margin: 20px auto;
 }
 .btn-dark {
     background-color: #94431d;
