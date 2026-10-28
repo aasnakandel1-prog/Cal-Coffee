@@ -15,7 +15,7 @@ header.bg-light {
 
 header nav {
   max-width: 100%;
-    width: 100%;
+  width: 100%;
   padding-left: 24px;
   padding-right: 24px;
   display: flex;
@@ -86,7 +86,7 @@ h1 {
 }
 
 footer .bg-dark{
-    background-color: #30251f;
+    background-color: rosybrown;
 }
 footer h2.text-warning{
     color: #edc580;
