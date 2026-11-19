@@ -10,68 +10,20 @@
 </head>
 <body>
 <!-- Navbar -->
-<header class="bg-light">
- <nav style="display: flex; align-items: center; width: 100%; max-width: none; padding: 20px 24px;">
-  <a href="#" class="navbar-brand fw-bold">Cali Coffee</a>
-   <div class="d-flex gap-3" style="margin-left: auto;">
-      <button class="btn" data-bs-toggle="collapse"
-        data-bs-target="#searchPanel" aria-label="Search"
-        aria-expanded="false" aria-controls="searchPanel">
-        <i class="bi bi-search"></i>
-      </button>
+<header class="site-header">
+ <nav class="site-nav" aria-label="Main navigation">
+  <a class="brand" href="#home">
+    <img src="images/IMG_0874.JPG" alt="Golden Gate Bridge"> Cali Coffee
+  </a>
 
-      <button class="btn" data-bs-toggle="collapse"
-        data-bs-target="#profilePanel" aria-label="Profile"
-        aria-expanded="false" aria-controls="profilePanel">
-        <i class="bi bi-person"></i>
-      </button>
-
-      <button class="btn" data-bs-toggle="collapse"
-        data-bs-target="#cartPanel" aria-label="Shopping cart"
-        aria-expanded="false" aria-controls="cartPanel">
-        <i class="bi bi-cart"></i>
-      </button>
-
-      <button class="btn" data-bs-toggle="collapse"
-        data-bs-target="#aboutPanel" aria-label="Open menu"
-        aria-expanded="false" aria-controls="aboutPanel">
-        <i class="bi bi-list fs-3"></i>
-      </button>
-    </div>
-  </nav>
-
-  <div class="container" id="navPanels">
-
-    <div class="collapse" id="searchPanel" data-bs-parent="#navPanels">
-      <div class="py-3">
-        <label for="coffeeSearch" class="form-label">Search drinks</label>
-        <input id="coffeeSearch" type="search"
-          class="form-control" placeholder="Search drinks…">
-      </div>
-    </div>
-
-    <div class="collapse" id="profilePanel" data-bs-parent="#navPanels">
-      <div class="py-3">
-        <h3 class="h5">My Account</h3>
-        <p>Online accounts are coming soon.</p>
-      </div>
-    </div>
-
-    <div class="collapse" id="cartPanel" data-bs-parent="#navPanels">
-      <div class="py-3">
-        <h3 class="h5">Shopping Cart</h3>
-        <p>Your cart is empty.</p>
-      </div>
-    </div>
-
-    <div class="collapse" id="aboutPanel" data-bs-parent="#navPanels">
-      <div class="py-3">
-        <h3 class="h5">About Cali Coffee</h3>
-        <p>We are a small coffee shop based in San Francisco, California. We serve fresh coffee inspired by the local culture.</p>
-        <a href="#about" class="text-dark">Learn more</a>
-        </div>
-    </div>
+  <div class="nav-actions">
+    <a href="#home">Home</a>
+    <a href="#cali-menu">Drinks</a>
+    <a href="#about">Our Story</a>
+  </div>
+</nav>
 </header>
+
 <main>
     <section class="bg-warning-subtle text-center py-5">
         <div class="container py-5">
@@ -89,18 +41,57 @@
            At Cali Coffee, we are passionate about bringing the vibrant flavors of California to your daily coffee experience. Our beans are sourced from local farms, roasted to perfection, and brewed with care to ensure every sip is a taste of the Golden State.
        </p>
       </div>
+    </div>
     </section>
   </main>
+
 <!-- Footer -->
-<footer class="bg-black text-light p-4">
-  <h2 class="text-warning">Cali Coffee</h2>
-  <p>Fresh coffee<i class="bi bi-cup"></i> Cozy moments....<i class="bi bi-tsunami"></i><br>
-    San Francisco, California<br>
-    Est. 2026
+<footer class="site-footer">
+  <h2>Cali Coffee.</h2>
+  <p>
+    Fresh coffee. Cozy moments.<br>
+    San Francisco, California · Est. 2026
   </p>
-  <a href="https://www.instagram.com/" class="text-light">Instagram</a><i class="bi bi-instagram"></i> |
-  <a href="https://www.facebook.com/" class="text-light">Facebook</a><i class="bi bi-facebook"></i>
+  <p>Instagram | Facebook</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  (() => {
+    const track = document.getElementById("drinksTrack");
+    const previous = document.querySelector(".drink-prev");
+    const next = document.querySelector(".drink-next");
+
+    if (!track || !previous || !next) return;
+
+    function moveDrink(direction) {
+      const card = track.querySelector(".slide");
+      if (!card) return;
+
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      track.scrollBy({
+        left: direction * (card.getBoundingClientRect().width + gap),
+        behavior: reduceMotion ? "instant" : "smooth"
+      });
+    }
+
+    function updateArrows() {
+      previous.disabled = track.scrollLeft <= 1;
+      next.disabled =
+        track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+    }
+
+    previous.addEventListener("click", () => moveDrink(-1));
+    next.addEventListener("click", () => moveDrink(1));
+    track.addEventListener("scroll", updateArrows);
+    window.addEventListener("resize", updateArrows);
+    window.addEventListener("load", updateArrows);
+
+    updateArrows();
+  })();
+</script>
 </body>
 </html>

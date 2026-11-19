@@ -1,96 +1,397 @@
-body{
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #fff8ed;
-    color: #432d23;
-    line-height: 1.6;
+* {
+  box-sizing: border-box;
 }
 
-header.bg-light {
-    background-color: #fff8ed;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eb8d0a;
-
+body {
+  margin: 0;
+  background-color: #fff3dc;
+  color: #38271f;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
 
-header nav {
-  max-width: 100%;
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.container {
   width: 100%;
-  padding-left: 24px;
-  padding-right: 24px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+.site-header {
+  background-color: #2c1e18;
+  border-bottom: 1px solid #654638;
+}
+
+.site-nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 24px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
-}
-header nav > div {
-    margin-left: auto;
-}
-.navbar-brand {
-    color:#eb8d0a;
-    font-size: 26px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.navbar-brand:hover {
-    color: #b3663d;
+.site-nav a {
+  color: #fff4e6;
+  text-decoration: none;
 }
 
-nav .btn {
-    color: #432d23;
-    font-size: 20px;
+.brand {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-h1 {
-    font-family:Cambria, Cochin, Georgia, serif;
-    color: #70452f
+.nav-links,
+.nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
+.nav-links a,
+.nav-actions a {
+  font-size: 14px;
+}
+
+.nav-links a:hover,
+.nav-actions a:hover {
+  text-decoration: underline;
+}
+
+/* Welcome section */
+.welcome {
+  position: relative;
+  padding: 80px 24px 140px;
+  background-color: #b57537;
+  text-align: center;
+}
+
+.welcome .container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.welcome-label {
+  color: #38271f;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+
+
+.welcome-text {
+  max-width: 520px;
+  margin: auto;
+  color: #38271f;
+  font-size: 16px;
+}
+
+.menu-link {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background-color: #38271f;
+  color: #f8f3eb;
+  border-radius: 30px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.menu-link:hover {
+  background-color: #705644;
+  color: #f8f3eb;
+}
+
+/* California stickers */
+.background-sticker {
+  position: absolute;
+  width: 130px;
+  height: auto;
+  pointer-events: none;
+}
+
+.welcome-sticker {
+  left: 20px;
+  bottom: 15px;
+  transform: rotate(-12deg);
+}
+
+.story-sticker {
+  right: 20px;
+  bottom: 15px;
+  transform: rotate(10deg);
+}
+
+/* Drinks section */
+#cali-menu {
+  padding: 55px 20px;
+  background-color: #f8f3eb;
+  text-align: center;
+}
+
+#cali-menu h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#cali-menu > p {
+  color: #705644;
+  font-size: 15px;
+}
+
+/* Centered slider */
+.drinks-carousel {
+  position: relative;
+  max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 0 45px;
+}
+
+#drinksTrack {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scroll-snap-type: x mandatory;
+}
+
+#drinksTrack .slide {
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-width: 0;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+#drinksTrack img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background-color: #e8d8c5;
+}
+
+#drinksTrack .card-body {
+  padding: 18px 0;
+}
+
+#drinksTrack h3 {
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+#drinksTrack p {
+  color: #705644;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#drinksTrack .drink-price {
+  color: #38271f;
+  font-weight: bold;
+}
+
+/* Slider arrows */
+#cali-menu .drink-arrow {
+  position: absolute;
+  top: 120px;
+  width: 35px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background-color: #38271f;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.drink-prev {
+  left: 0;
+}
+
+.drink-next {
+  right: 0;
+}
+
+#cali-menu .drink-arrow:hover:not(:disabled) {
+  background-color: #705644;
+}
+
+.drink-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Our story */
 #about {
-    background-color: #eb8d0a;
-    padding: 90px 24px;
-    text-align: center;
+  position: relative;
+  padding: 65px 24px 140px;
+  background-color: #e8c5a5;
+  text-align: center;
+}
+
+#about .container {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
 }
 
 .about-label {
-    color:#d8cccc;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 5px;
+  color: #705644;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 
-#about h2{
-    font-family:Georgia, serif;
-    font-size: clamp(36px, 5vw, 64px);
-    line-height: 1.1;
-    color: #513526;
-    margin: 24px 0;
-
+#about h2 {
+  color: #38271f;
+  font-size: 46px;
+  line-height: 1.2;
+  margin-bottom: 25px;
 }
 
-#about p {
-    font-family: Georgia, serif;
-    font-size: 24px;
-    line-height: 1.1;
-    max-width: 500px; 
-    margin: 20px auto;
-}
-.btn-dark {
-    background-color: #94431d;
-    border-color: #ee5007;
-    border-radius: 30px;
+.story-text {
+  max-width: 550px;
+  margin: auto;
+  color: #38271f;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
-.btn-dark:hover {
-    background-color: #515151;
-    border-color: #974343
+/* Small footer */
+.site-footer {
+  padding: 22px 20px;
+  background-color: #38271f;
+  color: #f8f3eb;
+  text-align: center;
 }
 
-footer .bg-dark{
-    background-color: rosybrown;
+.site-footer h2 {
+  font-size: 25px;
+  margin-bottom: 8px;
 }
-footer h2.text-warning{
-    color: #edc580;
+
+.site-footer p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 8px;
 }
-footer a:hover{
-    text-decoration: underline;
-} 
+
+.site-footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Keyboard focus */
+a:focus-visible,
+button:focus-visible,
+#drinksTrack:focus-visible {
+  outline: 3px solid #996342;
+  outline-offset: 4px;
+}
+
+/* Tablet screens */
+@media (max-width: 900px) {
+  #drinksTrack .slide {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+
+  .welcome h1 {
+    font-size: 46px;
+  }
+
+  .background-sticker {
+    width: 100px;
+  }
+}
+
+/* Phone screens */
+@media (max-width: 550px) {
+  .site-nav {
+    justify-content: center;
+  }
+
+  .nav-links,
+  .nav-actions {
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .welcome {
+    padding: 55px 16px 130px;
+  }
+
+  .welcome h1 {
+    font-size: 36px;
+  }
+
+  #cali-menu {
+    padding: 40px 12px;
+  }
+
+  #cali-menu h2 {
+    font-size: 30px;
+  }
+
+  .drinks-carousel {
+    padding: 0 40px;
+  }
+
+  #drinksTrack .slide {
+    flex-basis: 100%;
+  }
+
+  #drinksTrack img {
+    height: 240px;
+  }
+
+  #cali-menu .drink-arrow {
+    top: 100px;
+  }
+
+  #about {
+    padding: 50px 20px 130px;
+  }
+
+  #about h2 {
+    font-size: 34px;
+  }
+
+  .story-text {
+    font-size: 17px;
+  }
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  transform: rotate(-10deg);
+}
