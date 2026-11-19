@@ -25,18 +25,114 @@
 </header>
 
 <main>
-    <section class="bg-warning-subtle text-center py-5">
-        <div class="container py-5">
-            <p class="text-uppercase fw-semibold">Your local coffee haven</p>
-            <h1 class="display-4 fw-bold">Welcome to Cali Coffee</h1>
-            <p class="lead">Experience the taste of coastal California in every cup.</p>
-            <p  class="lead">Meet piece of west coast in a cup of coffee</p>
-        </div>
-    </section>
-    <section id="about">
-       <div class="container">
-        <span class="about-label"> THE CALI COFFEE STORY</span>
-        <h2> A little California<br> in your cup</h2>
+  <section class="welcome" id="home">
+    <div class="container">
+      <p class="welcome-label">YOUR LOCAL COFFEE HAVEN</p>
+      <h1>Welcome to Cali Coffee</h1>
+      <p class="welcome-text">
+        Experience the taste of coastal California in every cup.</p>
+        <a class="menu-link" href="#cali-menu">Explore our drinks</a>
+    </div>
+  </section>
+  <section id="cali-menu" aria-labelledby="drinks-heading">
+        <h2 id="drinks-heading">Our Drinks</h2>
+        <p>Find your everyday favorite.</p>
+
+        <div class="drinks-carousel">
+          <button
+            class="drink-arrow drink-prev"
+            type="button"
+            aria-label="Previous drinks"
+            aria-controls="drinksTrack"
+            >
+            &#8592;
+          </button>
+        <div
+          class="slider-container"
+          id="drinksTrack"
+          tabindex="0"
+          role="region"
+          aria-label="Drinks menu. Scroll sideways to explore more drinks.">
+        <article class="slide">
+          <img src="images/IMG_0892.JPG" alt="Cappuccino">
+          <div class="card-body">
+            <h3>Cappuccino</h3>
+            <p>Espresso with steamed milk and foam.</p>
+            <p class="drink-price">8 oz . $5.15</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="images/IMG_0895.JPG" alt="Cortado" loading="lazy">
+          <div class="card-body">
+            <h3>Cortado</h3>
+            <p>Equal part espresso with steamed milk.</p>
+            <p class="drink-price">8 oz . $4.45</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img src="images/IMG_0890.JPG" alt="Flat White" loading="lazy">
+          <div class="card-body">
+            <h3>Flat White</h3>
+            <p>Espresso with steamed milk and a thin layer of foam.</p>
+            <p class="drink-price">8 oz . $5.30</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img src="images/IMG_0891.JPG" alt="Caffè Latte" loading="lazy">
+          <div class="card-body">
+            <h3>Caffè Latte</h3>
+            <p>Espresso with plenty of milk and a light layer of foam.</p>
+            <p class="drink-price">12 oz . $5.50</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img src="images/IMG_0898.JPG" alt="Iced Latte" loading="lazy">
+          <div class="card-body">
+            <h3>Iced Latte</h3>
+            <p>Espresso with cold milk and ice.</p>
+            <p class="drink-price">12 oz . $5.75</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img src="images/IMG_0893.JPG" alt="Iced Americano" loading="lazy">
+          <div class="card-body">
+            <h3>Iced Americano</h3>
+            <p>Espresso with cold water and ice.</p>
+            <p class="drink-price">12 oz . $5.15</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img src="images/IMG_0894.PNG" alt="Hot Americano" loading="lazy">
+          <div class="card-body">
+            <h3>Hot Americano</h3>
+            <p>Espresso with hot water.</p>
+            <p class="drink-price">12 oz . $5.00</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img src="images/IMG_0899.JPG" alt="Matcha Latte" loading="lazy">
+          <div class="card-body">
+            <h3>Matcha Latte</h3>
+            <p>Matcha green tea with steamed milk.</p>
+            <p class="drink-price">12 oz . $7.70</p>
+          </div>
+        </article>
+      </div>
+      <button class="drink-arrow drink-next"
+      type="button"
+      aria-label="Next drink"
+      aria-controls="drinksTrack"
+      >
+      &#8594;
+    </button>
+    </div>
+  </section>
+  <section id="about">
+    <div class="" alt="Cali Coffee story" class="background-sticker story-sticker">
+    <div class="container">
+        <p class="about-label"> THE CALI COFFEE STORY</p>
+        <h2 id="story-heading"> A little California<br> in your cup</h2>
         <p class="story-text">
            At Cali Coffee, we are passionate about bringing the vibrant flavors of California to your daily coffee experience. Our beans are sourced from local farms, roasted to perfection, and brewed with care to ensure every sip is a taste of the Golden State.
        </p>
